@@ -1,0 +1,23 @@
+/* 1. Default Style for Project Cards */
+.project-card {
+  background-color: #ffffff; /* Default background */
+  border: 2px solid #008080; /* Default teal border */
+  transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* 2. HOVER State (Color changes to Coral when user hovers) */
+.project-card:hover {
+  border-color: #FF7F50; /* Border changes to Coral */
+  background-color: #fdf5f0; /* Slight background tint */
+}
+
+/* 3. Style for Buttons */
+.learn-more-btn {
+  background-color: #008080; /* Default teal background */
+  transition: background-color 0.2s ease;
+}
+
+/* 4. ACTIVE/CLICK State (Color changes to Gold when user clicks) */
+.learn-more-btn:active {
+  background-color: #DAA520; /* Changes to Gold only when clicked */
+}
