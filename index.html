@@ -395,6 +395,66 @@ footer{background:var(--bk);border-top:1px solid rgba(255,255,255,.06);padding:3
   .ab-accent{display:none}
   footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
 }
+/* ═══ PROJECTS & CASE STUDIES ═══ */
+#projects{background:var(--bk)}
+.proj-head{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:end;margin-bottom:80px}
+.cases-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:42px;margin-top:60px}
+.case{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);padding:44px;
+  transition:all .42s cubic-bezier(.16,1,.3,1)}
+.case:hover{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.15);transform:translateY(-8px)}
+.case-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:24px;padding-bottom:20px;border-bottom:1px solid rgba(255,255,255,.08)}
+.case-num{font-family:var(--D);font-size:2.5rem;color:rgba(255,255,255,.11);line-height:1}
+.case-cat{font-size:.58rem;letter-spacing:.25em;text-transform:uppercase;color:rgba(255,255,255,.45)}
+.case-title{font-family:var(--D);font-size:1.35rem;margin-bottom:18px;line-height:1.2;letter-spacing:-.01em}
+.case-desc{font-size:.78rem;font-weight:300;line-height:1.85;color:rgba(255,255,255,.55);margin-bottom:28px}
+.case-metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;padding:20px 0;border-top:1px solid rgba(255,255,255,.05);border-bottom:1px solid rgba(255,255,255,.05)}
+.cm{display:flex;flex-direction:column;gap:4px}
+.cm-n{font-family:var(--D);font-size:1.6rem;color:var(--wh);line-height:1;letter-spacing:-.01em}
+.cm-l{font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.35)}
+.case-tags{display:flex;flex-wrap:wrap;gap:8px}
+.case-tag{font-size:.57rem;padding:7px 14px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.55);
+  background:transparent;letter-spacing:.12em;text-transform:uppercase;transition:all .3s}
+.case:hover .case-tag{border-color:rgba(255,255,255,.4);color:rgba(255,255,255,.75)}
+
+/* ═══ TESTIMONIALS ═══ */
+#testimonials{background:var(--wh);color:var(--bk)}
+.test-head{margin-bottom:80px}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:48px;margin-top:60px}
+.test{background:var(--g1);padding:44px;border:1px solid var(--g2);
+  transition:all .42s cubic-bezier(.16,1,.3,1);position:relative}
+.test:hover{border-color:var(--g4);transform:translateY(-8px)}
+.test::before{content:"″";position:absolute;top:-20px;left:44px;font-size:2.2rem;color:var(--g4);opacity:.2}
+.test-body{margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid var(--g2)}
+.test-quote{font-family:var(--C);font-style:italic;font-size:.95rem;line-height:1.85;color:var(--g6);font-weight:300}
+.test-meta{display:flex;justify-content:space-between;align-items:flex-end;gap:16px}
+.test-info{flex:1}
+.test-name{font-family:var(--D);font-size:1rem;letter-spacing:.05em;margin-bottom:4px;color:var(--bk)}
+.test-role{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--g4)}
+.test-badge{font-size:.85rem;white-space:nowrap}
+
+@media(max-width:1024px){
+  .pad{padding-left:40px;padding-right:40px}
+  #nav,#nav.sc{padding-left:40px;padding-right:40px}
+  .grow-grid{grid-template-columns:1fr 1fr}
+  .tools-grid{grid-template-columns:repeat(3,1fr)}
+  .cases-grid{grid-template-columns:1fr 1fr}
+  .test-grid{grid-template-columns:1fr 1fr}
+  footer{padding:28px 40px}
+}
+@media(max-width:768px){
+  #cover{grid-template-columns:1fr;height:auto;min-height:100vh}
+  .cover-photo-side{height:55vh}
+  .cover-text-side{padding:52px 28px 72px}
+  .cov-ghost{display:none}
+  .cover-text-side::before{display:none}
+  .pad{padding:80px 24px}#nav,#nav.sc{padding:18px 24px}.n-links{display:none}
+  .ab-grid,.exp-layout,.svcs-layout,.phil-split,.grow-head,.tools-head,.proj-head,.test-head{grid-template-columns:1fr;gap:40px}
+  .grow-grid,.exp-grid,.tools-grid,.cases-grid,.test-grid{grid-template-columns:1fr}
+  .stats-bar{grid-template-columns:1fr 1fr}
+  .phil-right{min-height:50vh}
+  .ab-accent{display:none}
+  footer{flex-direction:column;gap:12px;text-align:center;padding:24px}
+}
 @media print{
   #cur,#nav,.cov-scroll,.mq{display:none!important}
   *{animation:none!important;transition:none!important}
@@ -415,6 +475,7 @@ footer{background:var(--bk);border-top:1px solid rgba(255,255,255,.06);padding:3
     <li><a href="#about">About</a></li>
     <li><a href="#exp">Expertise</a></li>
     <li><a href="#svcs">Services</a></li>
+    <li><a href="#projects">Projects</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="n-pdf" onclick="window.print()">Export PDF</button>
@@ -592,6 +653,123 @@ footer{background:var(--bk);border-top:1px solid rgba(255,255,255,.06);padding:3
   <div class="sb rv d3"><span class="sb-n">7</span><span class="sb-d">Core Services</span></div>
 </div>
  
+<!-- ═══ PROJECTS & CASE STUDIES ═══ -->
+<section id="projects" class="pad">
+  <div class="proj-head rv">
+    <div>
+      <div class="lbl dk">Selected Work</div>
+      <h2 class="H" style="color:var(--bk)">CASE<br>STUDIES</h2>
+    </div>
+    <p class="proj-sub" style="font-size:.9rem;font-weight:300;line-height:1.9;color:var(--g4)">Real growth, real results. Here's how I've helped brands scale through strategic marketing and data-driven execution.</p>
+  </div>
+  <div class="cases-grid">
+    <div class="case rv">
+      <div class="case-header">
+        <div class="case-num">01</div>
+        <div class="case-cat">Social Media Growth</div>
+      </div>
+      <h3 class="case-title">F&amp;B Brand: 0→50K Followers</h3>
+      <p class="case-desc">Built a 6-month social media strategy from zero presence to 50K followers across Instagram &amp; TikTok. Used content pillars, community management, and paid distribution to establish market authority.</p>
+      <div class="case-metrics">
+        <div class="cm"><span class="cm-n">50K+</span><span class="cm-l">Followers</span></div>
+        <div class="cm"><span class="cm-n">12%</span><span class="cm-l">Avg. Engagement</span></div>
+        <div class="cm"><span class="cm-n">3x</span><span class="cm-l">Return on Ad Spend</span></div>
+      </div>
+      <div class="case-tags">
+        <span class="case-tag">Instagram</span>
+        <span class="case-tag">TikTok</span>
+        <span class="case-tag">Paid Social</span>
+      </div>
+    </div>
+    
+    <div class="case rv d1">
+      <div class="case-header">
+        <div class="case-num">02</div>
+        <div class="case-cat">Paid Media &amp; SEO</div>
+      </div>
+      <h3 class="case-title">SaaS Startup: 120% Lead Growth</h3>
+      <p class="case-desc">Designed and executed a Google Ads + SEO strategy that increased qualified leads by 120% in 4 months. Optimised landing pages, refined targeting, and built a content strategy to capture high-intent keywords.</p>
+      <div class="case-metrics">
+        <div class="cm"><span class="cm-n">120%</span><span class="cm-l">Lead Growth</span></div>
+        <div class="cm"><span class="cm-n">$2.50</span><span class="cm-l">Cost Per Lead</span></div>
+        <div class="cm"><span class="cm-n">45%</span><span class="cm-l">Lead Conversion Rate</span></div>
+      </div>
+      <div class="case-tags">
+        <span class="case-tag">Google Ads</span>
+        <span class="case-tag">SEO</span>
+        <span class="case-tag">Landing Pages</span>
+      </div>
+    </div>
+    
+    <div class="case rv d2">
+      <div class="case-header">
+        <div class="case-num">03</div>
+        <div class="case-cat">Brand Strategy</div>
+      </div>
+      <h3 class="case-title">Ecommerce Brand: Complete Rebrand</h3>
+      <p class="case-desc">Led full brand positioning, messaging architecture, and visual identity overhaul for an established ecommerce brand. Resulted in clearer market positioning and 85% increase in website traffic within 3 months.</p>
+      <div class="case-metrics">
+        <div class="cm"><span class="cm-n">85%</span><span class="cm-l">Traffic Increase</span></div>
+        <div class="cm"><span class="cm-n">+28%</span><span class="cm-l">Conversion Rate</span></div>
+        <div class="cm"><span class="cm-n">$1.2M</span><span class="cm-l">Revenue Growth</span></div>
+      </div>
+      <div class="case-tags">
+        <span class="case-tag">Brand Strategy</span>
+        <span class="case-tag">Website Optimisation</span>
+        <span class="case-tag">Analytics</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section id="testimonials" class="pad">
+  <div class="test-head rv">
+    <div class="lbl">Social Proof</div>
+    <h2 class="H" style="margin-bottom:0">WHAT<br>CLIENTS<br>SAY</h2>
+  </div>
+  <div class="test-grid">
+    <div class="test rv">
+      <div class="test-body">
+        <p class="test-quote">"Anna completely transformed how we approach marketing. Her strategies didn't just drive traffic — they built a real community around our brand. The results speak for themselves."</p>
+      </div>
+      <div class="test-meta">
+        <div class="test-info">
+          <div class="test-name">Marcus Chen</div>
+          <div class="test-role">Founder, Digital Ventures</div>
+        </div>
+        <div class="test-badge">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+    
+    <div class="test rv d1">
+      <div class="test-body">
+        <p class="test-quote">"Working with Anna was refreshing. She combines creativity with hard data. Every decision felt grounded, and the ROI on our campaigns exceeded expectations by 40%."</p>
+      </div>
+      <div class="test-meta">
+        <div class="test-info">
+          <div class="test-name">Sarah Williams</div>
+          <div class="test-role">Marketing Director, TechFlow</div>
+        </div>
+        <div class="test-badge">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+    
+    <div class="test rv d2">
+      <div class="test-body">
+        <p class="test-quote">"I trusted Anna to rebuild our entire brand positioning, and I'm so glad I did. Her strategic thinking and execution were flawless. Highly recommended."</p>
+      </div>
+      <div class="test-meta">
+        <div class="test-info">
+          <div class="test-name">James Okonkwo</div>
+          <div class="test-role">CEO, Lifestyle Co.</div>
+        </div>
+        <div class="test-badge">⭐⭐⭐⭐⭐</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PHILOSOPHY -->
 <section id="phil">
   <div class="phil-split">
